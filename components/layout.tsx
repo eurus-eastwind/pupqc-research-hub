@@ -273,94 +273,88 @@ const Layout: React.FC<layoutProps> = ({ children }) => {
           // fixed
           style={{ position: "sticky", left: 0, top: 0 }}
         >
-          <Stack
-            align="center"
-            justify="space-between"
-            style={{ height: "100%" }}
-          >
-            <Image
-              src={Logo}
-              alt="PUPQC Research Hub Logo"
-              height={90}
-              width={150}
-            />
-            {isLoading ? null : (
-              <Box>
-                {role === "STUDENT" &&
-                  navLinksStudent.map((li) => (
-                    <Link key={li.name} href={li.to}>
-                      <Group
-                        noWrap
-                        p="md"
-                        position="left"
-                        sx={(theme) => ({
-                          userSelect: "none",
-                          width: 230,
-                          color: router.pathname === li.to ? "maroon" : "gray",
-                          "&:hover": {
-                            borderRadius: theme.radius.md,
-                            backgroundColor: theme.colors.gray[0],
-                          },
-                        })}
-                      >
-                        {li.icon}
-                        <Text size="sm" weight={500}>
-                          {li.name}
-                        </Text>
-                      </Group>
-                    </Link>
-                  ))}
-                {role === "FACULTY" &&
-                  navLinksFaculty.map((li) => (
-                    <Link key={li.name} href={li.to}>
-                      <Group
-                        noWrap
-                        p="md"
-                        position="left"
-                        sx={(theme) => ({
-                          userSelect: "none",
-                          width: 230,
-                          color: router.pathname === li.to ? "maroon" : "gray",
-                          "&:hover": {
-                            borderRadius: theme.radius.md,
-                            backgroundColor: theme.colors.gray[0],
-                          },
-                        })}
-                      >
-                        {li.icon}
-                        <Text size="sm" weight={500}>
-                          {li.name}
-                        </Text>
-                      </Group>
-                    </Link>
-                  ))}
-                {role === "ADMIN" &&
-                  navLinks.map((li) => (
-                    <Link key={li.name} href={li.to}>
-                      <Group
-                        p="md"
-                        position="left"
-                        sx={(theme) => ({
-                          userSelect: "none",
-                          width: 230,
-                          color: router.pathname === li.to ? "maroon" : "gray",
-                          "&:hover": {
-                            borderRadius: theme.radius.md,
-                            backgroundColor: theme.colors.gray[0],
-                          },
-                        })}
-                      >
-                        {li.icon}
-                        <Text size="sm" weight={500}>
-                          {li.name}
-                        </Text>
-                      </Group>
-                    </Link>
-                  ))}
-              </Box>
-            )}
-            <Box p={20}></Box>
-          </Stack>
+          <Image
+            src={Logo}
+            alt="PUPQC Research Hub Logo"
+            height={90}
+            width={150}
+          />
+          <Space h="xl" />
+          {isLoading ? null : (
+            <Box>
+              {role === "STUDENT" &&
+                navLinksStudent.map((li) => (
+                  <Link key={li.name} href={li.to}>
+                    <Group
+                      noWrap
+                      p="md"
+                      position="left"
+                      sx={(theme) => ({
+                        userSelect: "none",
+                        width: 230,
+                        color: router.pathname === li.to ? "maroon" : "gray",
+                        "&:hover": {
+                          borderRadius: theme.radius.md,
+                          backgroundColor: theme.colors.gray[0],
+                        },
+                      })}
+                    >
+                      {li.icon}
+                      <Text size="sm" weight={500}>
+                        {li.name}
+                      </Text>
+                    </Group>
+                  </Link>
+                ))}
+              {role === "FACULTY" &&
+                navLinksFaculty.map((li) => (
+                  <Link key={li.name} href={li.to}>
+                    <Group
+                      noWrap
+                      p="md"
+                      position="left"
+                      sx={(theme) => ({
+                        userSelect: "none",
+                        width: 230,
+                        color: router.pathname === li.to ? "maroon" : "gray",
+                        "&:hover": {
+                          borderRadius: theme.radius.md,
+                          backgroundColor: theme.colors.gray[0],
+                        },
+                      })}
+                    >
+                      {li.icon}
+                      <Text size="sm" weight={500}>
+                        {li.name}
+                      </Text>
+                    </Group>
+                  </Link>
+                ))}
+              {role === "ADMIN" &&
+                navLinks.map((li) => (
+                  <Link key={li.name} href={li.to}>
+                    <Group
+                      p="md"
+                      position="left"
+                      sx={(theme) => ({
+                        userSelect: "none",
+                        width: 230,
+                        color: router.pathname === li.to ? "maroon" : "gray",
+                        "&:hover": {
+                          borderRadius: theme.radius.md,
+                          backgroundColor: theme.colors.gray[0],
+                        },
+                      })}
+                    >
+                      {li.icon}
+                      <Text size="sm" weight={500}>
+                        {li.name}
+                      </Text>
+                    </Group>
+                  </Link>
+                ))}
+            </Box>
+          )}
         </Navbar>
       }
       styles={(theme) => ({
