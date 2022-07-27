@@ -18,6 +18,7 @@ import {
   Transition,
   Space,
   Footer,
+  Center,
 } from "@mantine/core";
 import {
   Affiliate,
@@ -273,12 +274,14 @@ const Layout: React.FC<layoutProps> = ({ children }) => {
           // fixed
           style={{ position: "sticky", left: 0, top: 0 }}
         >
-          <Image
-            src={Logo}
-            alt="PUPQC Research Hub Logo"
-            height={90}
-            width={150}
-          />
+          <Center>
+            <Image
+              src={Logo}
+              alt="PUPQC Research Hub Logo"
+              height={60}
+              width={110}
+            />
+          </Center>
           <Space h="xl" />
           {isLoading ? null : (
             <Box>
