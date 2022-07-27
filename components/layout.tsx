@@ -248,6 +248,17 @@ const Layout: React.FC<layoutProps> = ({ children }) => {
         />
       ),
     },
+    {
+      name: "Add Course",
+      to: "/add-course",
+      icon: (
+        <Affiliate
+          size={28}
+          strokeWidth={1.5}
+          color={router.pathname === "/add-course" ? "maroon" : "gray"}
+        />
+      ),
+    },
   ];
 
   return (
