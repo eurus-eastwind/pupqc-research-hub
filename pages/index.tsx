@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Alert,
@@ -30,6 +30,8 @@ import { User as PrismaUser } from "@prisma/client";
 import { useUser } from "@/utils/user.routes";
 import Folder from "@/components/folder";
 import { getFaculties } from "@/utils/faculty.routes";
+import PDFViewer from "@/components/pdf-viewer";
+import PDF from "@/components/pdf-viewer";
 
 interface homePageProps {
   user: PrismaUser;
@@ -40,6 +42,7 @@ const HomePage: React.FC<homePageProps> = ({ user }) => {
   const { count: studentCount } = getStudents(user);
   const { count: facultiesCount } = getFaculties(user);
   const { count: documentCount } = getDocuments();
+
   if (isLoading) return <></>;
   return (
     <Container size="xl">
@@ -102,23 +105,18 @@ const Student = () => {
             <Title order={3}>Forms</Title>
             <Space h="md" />
             <Group>
-              <Folder
+              <PDF
+                path="./UREC-Form-11-Informed-Consent-Form-BREB-Version.pdf"
                 title="UREC-Form-11-Informed Consent Form-BREB-Version"
-                onClick={() => {}}
-                withBorder
-                style={{ flex: 1 }}
               />
-              <Folder
+              <PDF
+                path="./Form-1-application-letter-for-ethics-review.pdf"
                 title="Form 1- application letter for ethics review"
-                onClick={() => {}}
-                withBorder
-                style={{ flex: 1 }}
               />
-              <Folder
+
+              <PDF
+                path="./UREC-Form-10-Study-Protocol-BREBVersion.pdf"
                 title="UREC-Form-10-Study Protocol-BREBVersion"
-                onClick={() => {}}
-                withBorder
-                style={{ flex: 1 }}
               />
             </Group>
           </Paper>
