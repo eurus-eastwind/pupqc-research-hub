@@ -25,6 +25,7 @@ import { getDocuments } from "@/utils/documents.routes";
 import { Documents } from "@prisma/client";
 import { useSession } from "next-auth/react";
 import { useUser } from "@/utils/user.routes";
+import PDF from "./pdf-viewer";
 
 interface documnetProps {
   title?: string;
@@ -112,9 +113,10 @@ const Document: React.FC<documnetProps> = ({ title, role }) => {
               ))}
             </List>
             <Space h="xs" />
-            <Paper p="md" radius="md" withBorder>
-              PDF FILE
-            </Paper>
+            <PDF
+              path="./Research_on_the_Application_of_Face_Recognition_Sy-1.pdf"
+              title={researchData?.title}
+            />
             {user.role !== "STUDENT" && (
               <>
                 <Space h="xs" />

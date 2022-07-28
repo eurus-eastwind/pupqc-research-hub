@@ -106,16 +106,16 @@ const Student = () => {
             <Space h="md" />
             <Group>
               <PDF
-                path="./sample.pdf"
+                path="./UREC-Form-11-Informed-Consent-Form-BREB-Version.pdf"
                 title="UREC-Form-11-Informed Consent Form-BREB-Version"
               />
               <PDF
-                path="./sample.pdf"
+                path="./Form-1-application-letter-for-ethics-review.pdf"
                 title="Form 1- application letter for ethics review"
               />
 
               <PDF
-                path="./sample.pdf"
+                path="./UREC-Form-10-Study-Protocol-BREBVersion.pdf"
                 title="UREC-Form-10-Study Protocol-BREBVersion"
               />
             </Group>
