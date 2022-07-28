@@ -9,6 +9,14 @@ const nextConfig = {
       use: ["@svgr/webpack"],
     });
 
+    config.module.rules.unshift({
+      test: /pdf\.worker\.(min\.)?js/,
+      type: "asset/resource",
+      generator: {
+        filename: "static/worker/[hash][ext][query]",
+      },
+    });
+
     return config;
   },
 };
