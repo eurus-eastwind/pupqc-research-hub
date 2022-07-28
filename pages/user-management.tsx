@@ -173,6 +173,6 @@ export default UserManagementPage;
 export const getServerSideProps: GetServerSideProps = protectedRoute(
   async ({ req }) => {
     // @ts-ignore
-    return { props: { user: req.user } };
+    return { props: { user: JSON.parse(JSON.stringify(req.user)) } };
   }
 );
