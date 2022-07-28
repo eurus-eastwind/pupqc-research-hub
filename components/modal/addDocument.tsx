@@ -63,7 +63,7 @@ const AddDocumentModal: React.FC<addDocumentProps> = ({ role }) => {
       ...values,
       researchers: researchersObject,
       abstract,
-      role: role.toUpperCase(),
+      role,
     };
 
     await createDocument(data);

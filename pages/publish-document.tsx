@@ -17,7 +17,7 @@ const PublishDocumentPage: React.FC = () => {
           <Document title="Student Research Document" role="STUDENT" />
         </Tabs.Tab>
         <Tabs.Tab label="Faculty" icon={<Book2 size={14} />}>
-          <Document title="Faculty Research Document" role="STAFF" />
+          <Document title="Faculty Research Document" role="FACULTY" />
         </Tabs.Tab>
       </Tabs>
     </Container>
