@@ -11,11 +11,14 @@ import {
   Center,
   Text,
   Table,
+  Group,
+  Space,
 } from "@mantine/core";
 import { User } from "@prisma/client";
 import { protectedRoute } from "HOC/protectedRoute";
 import { GetServerSideProps } from "next";
 import React from "react";
+import { Search } from "tabler-icons-react";
 
 interface contactUsProps {
   user: User;
@@ -39,20 +42,31 @@ const ContactUsPage: React.FC<contactUsProps> = ({ user }) => {
   return (
     <Container size="xl">
       {role !== "STUDENT" ? (
-        <Paper shadow="sm" p="md" radius="md">
-          <Table horizontalSpacing="xl" verticalSpacing="sm">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Course</th>
-                <th>Date</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>{studentRow}</tbody>
-          </Table>
-        </Paper>
+        <>
+          <Group position="right">
+            <TextInput
+              type="search"
+              radius="md"
+              placeholder="Search"
+              rightSection={<Search size={14} />}
+            />
+          </Group>
+          <Space h="md" />
+          <Paper shadow="sm" p="md" radius="md">
+            <Table horizontalSpacing="xl" verticalSpacing="sm">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Course</th>
+                  <th>Date</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>{studentRow}</tbody>
+            </Table>
+          </Paper>
+        </>
       ) : (
         <Stack align="center" justify="center">
           <Paper shadow="sm" radius="md" p="md" sx={{ width: "60%" }}>
