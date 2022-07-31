@@ -30,6 +30,7 @@ import {
   ChevronDown,
   Home2,
   LayoutList,
+  Phone,
   Star,
 } from "tabler-icons-react";
 import Link from "next/link";
@@ -356,6 +357,31 @@ const Layout: React.FC<layoutProps> = ({ children }) => {
                     </Group>
                   </Link>
                 ))}
+              <Link href="/contactUs">
+                <Group
+                  noWrap
+                  p="md"
+                  position="left"
+                  sx={(theme) => ({
+                    userSelect: "none",
+                    width: 230,
+                    color: router.pathname === "/contactUs" ? "maroon" : "gray",
+                    "&:hover": {
+                      borderRadius: theme.radius.md,
+                      backgroundColor: theme.colors.gray[0],
+                    },
+                  })}
+                >
+                  <Phone
+                    size={28}
+                    strokeWidth={1.5}
+                    color={router.pathname === "/contactUs" ? "maroon" : "gray"}
+                  />
+                  <Text size="sm" weight={500}>
+                    Contact Us
+                  </Text>
+                </Group>
+              </Link>
             </Box>
           )}
         </Navbar>

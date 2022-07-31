@@ -13,11 +13,12 @@ import {
   Grid,
   Text,
   Alert,
+  ActionIcon,
 } from "@mantine/core";
 import { protectedRoute } from "HOC/protectedRoute";
 import { GetServerSideProps } from "next";
 import React, { useState } from "react";
-import { AlertCircle, Plus, Rocket } from "tabler-icons-react";
+import { AlertCircle, Edit, Plus, Rocket, Trash } from "tabler-icons-react";
 
 const Announcement = () => {
   const [data, setData] = useState({
@@ -105,6 +106,14 @@ const Announcement = () => {
                   <Text size="sm" weight={500}>
                     Posted: 2022-01-05
                   </Text>
+                  <Group position="right">
+                    <ActionIcon color="blue" variant="transparent">
+                      <Edit />
+                    </ActionIcon>
+                    <ActionIcon color="red" variant="transparent">
+                      <Trash />
+                    </ActionIcon>
+                  </Group>
                 </Alert>
               </>
             )}

@@ -15,7 +15,7 @@ import {
 } from "@mantine/core";
 import { courses } from "data/course";
 import React from "react";
-import { Plus, Trash } from "tabler-icons-react";
+import { Edit, Plus, Trash } from "tabler-icons-react";
 
 const elements = courses.map((c) => ({ name: `${c.name}-${c.value}` }));
 
@@ -25,9 +25,9 @@ const AddCourse = () => {
       <td>{e.name}</td>
       <td>
         <Group noWrap spacing="sm">
-          <Button color="red" variant="light">
-            Edit
-          </Button>
+          <ActionIcon color="blue">
+            <Edit />
+          </ActionIcon>
           <ActionIcon color="red">
             <Trash />
           </ActionIcon>
