@@ -20,7 +20,7 @@ const StatsCard: React.FC<statsCardProps> = ({ icon, total, text, color }) => {
         <Space h="md" />
         <Group noWrap>
           <Title order={4}>{total}</Title>
-          <Text>{text}</Text>
+          <Text lineClamp={1}>{text}</Text>
         </Group>
       </Group>
     </Paper>

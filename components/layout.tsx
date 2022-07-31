@@ -171,7 +171,7 @@ const Layout: React.FC<layoutProps> = ({ children }) => {
       ),
     },
     {
-      name: "Add Course",
+      name: "Course",
       to: "/add-course",
       icon: (
         <Affiliate
@@ -251,7 +251,7 @@ const Layout: React.FC<layoutProps> = ({ children }) => {
       ),
     },
     {
-      name: "Add Course",
+      name: "Course",
       to: "/add-course",
       icon: (
         <Affiliate
@@ -475,8 +475,8 @@ const Layout: React.FC<layoutProps> = ({ children }) => {
           left: 0,
         }}
       >
-        <Stack align="center" justify="center" sx={{ height: "100%" }}>
-          <Text color="dimmed" weight={500}>
+        <Stack align="flex-start" justify="center" sx={{ height: "100%" }}>
+          <Text color="dimmed" weight={500} ml="xl">
             2022 Ⓒ Research Hub.
           </Text>
         </Stack>

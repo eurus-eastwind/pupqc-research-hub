@@ -118,7 +118,7 @@ const Appilication: React.FC<applicationProps> = ({ user }) => {
 
       <Group>
         <Title sx={{ flex: 1 }} order={3}>
-          List of Research
+          List of Application
         </Title>
         <TextInput
           radius="md"

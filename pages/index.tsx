@@ -71,16 +71,19 @@ const HomePage: React.FC<homePageProps> = ({ user }) => {
               text="Documents"
               color="orange"
             />
+          </Group>
+          <Space h="md" />
+          <Group>
             <StatsCard
               icon={<AlertCircle size={24} />}
               total={documentCount}
-              text="Pending"
+              text="Pending Application"
               color="yellow"
             />
             <StatsCard
               icon={<CircleCheck size={24} />}
               total={documentCount}
-              text="Approved"
+              text="Approved Application"
               color="green"
             />
           </Group>
