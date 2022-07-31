@@ -124,7 +124,7 @@ const Document: React.FC<documnetProps> = ({ title, role }) => {
                   <Button
                     style={{ flex: 1 }}
                     fullWidth
-                    color="red"
+                    color="blue"
                     variant="light"
                   >
                     Edit

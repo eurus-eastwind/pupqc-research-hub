@@ -1,6 +1,7 @@
-import { Center, Modal } from "@mantine/core";
+import { Button, Center, Modal, Space } from "@mantine/core";
 import dynamic from "next/dynamic";
 import { useState } from "react";
+import { Download } from "tabler-icons-react";
 import Folder from "../folder";
 
 const PDFViewer = dynamic(() => import("./viewer"), {
@@ -23,6 +24,10 @@ export default function PDF({ path, title }: pdfProps) {
         withCloseButton={false}
         size="xl"
       >
+        <Button variant="light">
+          <Download />
+        </Button>
+        <Space h="xl" />
         <Center>
           <PDFViewer path={path} />
         </Center>

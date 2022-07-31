@@ -1,9 +1,17 @@
 import { updateUser } from "@/utils/user.routes";
-import { Button, Modal, Select, Space, TextInput } from "@mantine/core";
+import {
+  ActionIcon,
+  Button,
+  Modal,
+  Select,
+  Space,
+  TextInput,
+} from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { User } from "@prisma/client";
 import React, { useEffect, useState } from "react";
 import { mutate } from "swr";
+import { Edit } from "tabler-icons-react";
 import SelectComponent from "../selectComponent";
 
 interface editUserProps {
@@ -92,14 +100,9 @@ const EditUserModal: React.FC<editUserProps> = ({ user }) => {
           </Button>
         </form>
       </Modal>
-      <Button
-        radius="md"
-        variant="light"
-        color="blue"
-        onClick={() => setOpened(true)}
-      >
-        Edit
-      </Button>
+      <ActionIcon color="blue" onClick={() => setOpened(true)}>
+        <Edit size={18} />
+      </ActionIcon>
     </>
   );
 };

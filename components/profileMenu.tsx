@@ -129,7 +129,7 @@ const ProfileMenu: React.FC<profileMenuProps> = ({
             placeholder="Email"
             {...form.getInputProps("email")}
           />
-          {currentUser.role === "STUDENT" ? (
+          {currentUser?.role === "STUDENT" ? (
             <TextInput
               radius="md"
               label="Course"
